@@ -13,24 +13,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Student student = new Student("Jan", "Kowalski", 32);
-        Student student1 = new Student("Adnrzej", "Bator",60);
-        Student student2 = new Student("Błażej", "Nowakowski", 30);
-        Student student3 = new Student("Karolina", "Bocian", 16);
-        Student student4 = new Student("Rafał", "Boniek", 71);
-        Student student5 = new Student("Mariusz", "Tomczyk", 25);
+//        Student student = new Student("Jan", "Kowalski", 32);
+//        Student student1 = new Student("Adnrzej", "Bator",60);
+//        Student student2 = new Student("Błażej", "Nowakowski", 30);
+//        Student student3 = new Student("Karolina", "Bocian", 16);
+//        Student student4 = new Student("Rafał", "Boniek", 71);
+//        Student student5 = new Student("Mariusz", "Tomczyk", 25);
 
         ObjectMapper objectMapper = new ObjectMapper();
 
         List<Student> Studentlist = new ArrayList<>();
-        Studentlist.add(student);
-        Studentlist.add(student1);
-        Studentlist.add(student2);
-        Studentlist.add(student3);
-        Studentlist.add(student4);
-        Studentlist.add(student5);
+//        Studentlist.add(student);
+//        Studentlist.add(student1);
+//        Studentlist.add(student2);
+//        Studentlist.add(student3);
+//        Studentlist.add(student4);
+//        Studentlist.add(student5);
 
-        try {
+//        try {
             objectMapper.writeValue(new File("student.json"), student);
             objectMapper.writeValue(new File("student1.json"), student1);
             objectMapper.writeValue(new File("student2.json"), student2);
@@ -43,7 +43,8 @@ public class Main {
         }
 
 
-
+        JSONUtils jsonUtils = new JSONUtils();
+        jsonUtils.writeList("lista.json",Studentlist);
 
     }
 }
