@@ -5,6 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Main {
 
@@ -19,6 +22,14 @@ public class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
 
+        List<Student> Studentlist = new ArrayList<>();
+        Studentlist.add(student);
+        Studentlist.add(student1);
+        Studentlist.add(student2);
+        Studentlist.add(student3);
+        Studentlist.add(student4);
+        Studentlist.add(student5);
+
         try {
             objectMapper.writeValue(new File("student.json"), student);
             objectMapper.writeValue(new File("student1.json"), student1);
@@ -26,9 +37,12 @@ public class Main {
             objectMapper.writeValue(new File("student3.json"), student3);
             objectMapper.writeValue(new File("student4.json"), student4);
             objectMapper.writeValue(new File("student5.json"), student5);
+            objectMapper.writeValue(new File("ListaStudentow.json"), Studentlist);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
 
 
     }
